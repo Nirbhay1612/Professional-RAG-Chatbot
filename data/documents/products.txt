@@ -1,0 +1,65 @@
+TECHSTORE PRODUCT INFORMATION
+
+SMARTPHONES
+
+Product: TechPhone X1
+Category: Smartphone
+Price: ₹24,999
+
+Features:
+- 6.5-inch display
+- 8 GB RAM
+- 128 GB storage
+- 5000 mAh battery
+
+Product: TechPhone Pro
+Category: Smartphone
+Price: ₹39,999
+
+Features:
+- 6.7-inch display
+- 12 GB RAM
+- 256 GB storage
+- 5000 mAh battery
+
+LAPTOPS
+
+Product: TechBook Air
+Category: Laptop
+Price: ₹59,999
+
+Features:
+- 14-inch display
+- 16 GB RAM
+- 512 GB SSD
+- Lightweight design
+
+Product: TechBook Pro
+Category: Laptop
+Price: ₹84,999
+
+Features:
+- 15.6-inch display
+- 16 GB RAM
+- 1 TB SSD
+- Performance-focused processor
+
+ACCESSORIES
+
+Product: TechBuds Wireless
+Category: Wireless Earbuds
+Price: ₹2,999
+
+Features:
+- Wireless connectivity
+- Charging case
+- Touch controls
+
+Product: TechCharge 65W
+Category: Charger
+Price: ₹1,499
+
+Features:
+- 65W charging
+- USB-C support
+- Multiple-device compatibility

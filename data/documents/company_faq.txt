@@ -1,0 +1,55 @@
+COMPANY FAQ
+
+Company Name: TechStore
+
+ABOUT THE COMPANY
+
+TechStore is an online e-commerce company that sells
+electronics, accessories and consumer technology products.
+
+CUSTOMER SUPPORT
+
+Customer support is available Monday to Saturday from
+9:00 AM to 6:00 PM.
+
+Customers can contact support through:
+Email: support@techstore.example
+Phone: +91-1800-000-000
+
+ORDERS
+
+Customers can check their order status from the
+"My Orders" section of their account.
+
+Orders can be cancelled before they are shipped.
+
+Once an order has been shipped, cancellation may not
+be available.
+
+RETURNS
+
+Eligible products can be returned within 30 days of
+delivery.
+
+Products must be unused and in acceptable condition
+for return eligibility.
+
+REFUNDS
+
+Approved refunds are generally processed within
+5-7 business days.
+
+The actual time for the refund to appear may depend
+on the customer's payment provider.
+
+PAYMENTS
+
+TechStore accepts:
+
+- UPI
+- Credit cards
+- Debit cards
+- Net banking
+
+For payment-related issues, customers should contact
+customer support.

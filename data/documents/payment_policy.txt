@@ -1,0 +1,34 @@
+TECHSTORE PAYMENT POLICY
+
+SUPPORTED PAYMENT METHODS
+
+Customers can pay using:
+
+- UPI
+- Credit cards
+- Debit cards
+- Net banking
+
+PAYMENT FAILURE
+
+If a payment fails but the amount has been deducted,
+customers should wait for the payment status to update.
+
+If the amount is not automatically reversed, customers
+should contact their payment provider and TechStore
+support.
+
+PAYMENT SECURITY
+
+Customers should never share their OTP, PIN, password
+or other confidential payment information with anyone.
+
+ORDER CONFIRMATION
+
+An order confirmation is generated after successful
+payment and order creation.
+
+CASH ON DELIVERY
+
+Cash on Delivery availability may depend on the product
+and delivery location.

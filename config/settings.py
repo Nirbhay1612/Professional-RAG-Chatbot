@@ -60,11 +60,43 @@ def get_int_env(name: str, default: int) -> int:
 # GROQ CONFIGURATION
 # =========================================================
 
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+# =========================================================
+# GROQ CONFIGURATION
+# =========================================================
 
-GROQ_MODEL = os.getenv(
+def get_setting(name: str, default: str = "") -> str:
+    """
+    Read configuration from environment variables.
+
+    Streamlit Cloud secrets are used as a fallback.
+    """
+
+    value = os.getenv(name)
+
+    if value:
+        return value.strip()
+
+    try:
+        import streamlit as st
+
+        secret_value = st.secrets.get(name, default)
+
+        if secret_value:
+            return str(secret_value).strip()
+
+    except (ImportError, FileNotFoundError):
+        pass
+    except Exception:
+        pass
+
+    return default
+
+
+GROQ_API_KEY = get_setting("GROQ_API_KEY")
+
+GROQ_MODEL = get_setting(
     "GROQ_MODEL",
-    "openai/gpt-oss-120b"
+    "openai/gpt-oss-120b",
 )
 
 

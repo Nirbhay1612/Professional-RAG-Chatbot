@@ -26,3 +26,7 @@ langchain-groq>=0.2.0
 
 # Utilities
 numpy>=1.26.0
+
+# Embeddings
+sentence-transformers>=3.0.0
+torchvision

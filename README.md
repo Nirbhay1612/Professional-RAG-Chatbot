@@ -2,44 +2,69 @@
 
 A document-based **Retrieval-Augmented Generation (RAG) chatbot** built with Python, Streamlit, LangChain, FAISS, Sentence Transformers, and Groq.
 
-Upload a PDF, TXT, or DOCX document and ask questions about its contents. The application retrieves relevant document chunks using semantic similarity search and uses a large language model (LLM) to generate context-grounded answers.
+Upload a **PDF, TXT, or DOCX** file and ask questions about its contents. The application retrieves relevant document chunks using semantic similarity search and uses a Groq-powered large language model (LLM) to generate context-grounded answers.
+
+## 🌐 Live Demo
+
+**[Try Professional RAG Chatbot on Streamlit](https://professional-rag-chatbot-zqtjbwxdba97tjtjcotzvt.streamlit.app/)**
+
+> The live demo depends on the availability of the hosted app, configured secrets, and third-party services.
+
+## 📸 Screenshots
+
+Add your actual screenshots to the repository's `screenshots/` folder, then uncomment or adjust the image paths below to match the exact filenames.
+
+
+![Chat Interface](screenshots/chat-interface.png)
+
+![Document Upload](screenshots/document-upload.png)
+
+![Answer and Sources](screenshots/answer-and-sources.png)
+-->
+
+**To show screenshots:** create a folder named `screenshots` in the repository root, upload your screenshots, and replace the example filenames above with the exact filenames. Then remove the HTML comment markers (`<!--` and `-->`) around the image section.
 
 ## ✨ Features
 
-- 📄 **Document Upload:** Supports PDF, TXT, and DOCX files.
-- 🧹 **Text Cleaning:** Normalizes and prepares extracted document text.
-- ✂️ **Intelligent Chunking:** Splits documents into manageable text chunks.
-- 🧠 **Semantic Embeddings:** Uses Sentence Transformers to represent text as vectors.
-- 🔎 **Similarity Search:** Retrieves relevant document chunks for user questions.
-- 🗂️ **FAISS Vector Store:** Enables efficient vector similarity search.
-- 🤖 **LLM Integration:** Generates responses using Groq.
-- 💬 **Interactive Chat UI:** Provides a Streamlit-based interface.
-- 📚 **Source Information:** Displays retrieved source information alongside answers.
-- 🔐 **Environment-Based Configuration:** Keeps API credentials outside application code.
-- 🧪 **Automated Tests:** Includes tests for ingestion, retrieval, and RAG components.
-- 🧩 **Modular Architecture:** Separates document processing, embeddings, retrieval, and response generation.
+- 📄 **Multiple document formats:** Supports PDF, TXT, and DOCX uploads.
+- 🧹 **Text cleaning:** Normalizes extracted document text before indexing.
+- ✂️ **Text chunking:** Splits long documents into smaller chunks for retrieval.
+- 🧠 **Semantic embeddings:** Uses Sentence Transformers to encode document chunks.
+- 🔎 **Similarity search:** Retrieves relevant chunks for a user's question.
+- 🗂️ **FAISS vector store:** Supports efficient vector similarity search.
+- 🤖 **Groq LLM integration:** Generates answers using the configured Groq model.
+- 💬 **Interactive chat UI:** Provides a Streamlit interface for document Q&A.
+- 📚 **Source information:** Displays available source information alongside answers.
+- 🔐 **Environment-based configuration:** Keeps API credentials outside application code.
+- 🧪 **Automated tests:** Includes tests for ingestion, retrieval, and RAG components.
+- 🧩 **Modular architecture:** Separates ingestion, embeddings, retrieval, and answer generation.
 
-## 🖥️ Demo Link
+## 🧰 Tech Stack
 
-- **[ASK Document PDF Chatbot](https://professional-rag-chatbot-zqtjbwxdba97tjtjcotzvt.streamlit.app/)**
+- **Language:** Python
+- **UI:** Streamlit
+- **LLM orchestration:** LangChain
+- **LLM provider:** Groq
+- **Embeddings:** Sentence Transformers
+- **Vector search:** FAISS
+- **Document processing:** PyPDF, python-docx
+- **Configuration:** python-dotenv
+- **Testing:** pytest
 
-
-
-
-### Request Flow
+## 🏗️ Architecture and Request Flow
 
 1. The user uploads a supported document.
-2. The application loads and cleans its contents.
+2. The application extracts and cleans the document text.
 3. The text is split into smaller chunks.
-4. Sentence Transformers generates embeddings for the chunks.
-5. FAISS stores and searches the document vectors.
-6. The retriever finds relevant chunks for the user's question.
-7. The RAG chain passes the retrieved context and question to the LLM.
+4. Sentence Transformers converts the chunks into vector embeddings.
+5. FAISS stores and searches the vectors.
+6. The retriever finds chunks relevant to the user's question.
+7. The RAG chain combines the question with the retrieved context and sends it to the configured Groq model.
 8. The application displays the generated answer and available source information.
 
-The chatbot is designed to ground answers in retrieved document content. Its accuracy still depends on document quality, retrieval relevance, and model behavior.
+The chatbot is designed to ground answers in retrieved document content. Answer quality still depends on document quality, retrieval relevance, and model behavior.
 
-## 🏗️ Project Structure
+## 📁 Project Structure
 
 ```text
 professional-rag-chatbot/
@@ -91,81 +116,102 @@ professional-rag-chatbot/
     └── test_rag.py
 ```
 
-> The tree above reflects the current project layout. The `.env` file and generated vector-store files should remain local and should not be committed to GitHub.
+> This tree reflects the project structure provided in this README. Update it if your repository uses different filenames or folders. Keep `.env` and any private credentials out of Git. Generated vector-store files should generally not be committed unless your project specifically requires them.
 
-## 🛠️ Tech Stack
+## ⚙️ Setup and Installation
 
+### Prerequisites
 
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+- Python installed on your computer
+- Git
+- A Groq API key
+- A terminal such as VS Code Terminal or PowerShell
 
-[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
+### 1. Clone the repository
 
-[![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)](https://www.langchain.com/)
+Replace `<your-github-username>` with your GitHub username:
 
-[![Groq](https://img.shields.io/badge/Groq-F55036?style=for-the-badge&logo=groq&logoColor=white)](https://groq.com/)
+```bash
+git clone https://github.com/<your-github-username>/professional-rag-chatbot.git
+cd professional-rag-chatbot
+```
 
-[![Sentence Transformers](https://img.shields.io/badge/Sentence_Transformers-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://sbert.net/)
+Alternatively, download the repository from GitHub and open its folder in VS Code.
 
-[![FAISS](https://img.shields.io/badge/FAISS-0467DF?style=for-the-badge&logo=meta&logoColor=white)](https://github.com/facebookresearch/faiss)
+### 2. Create a virtual environment
 
-[![PyPDF](https://img.shields.io/badge/PyPDF-3776AB?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://pypdf.readthedocs.io/)
+**Windows (PowerShell):**
 
-[![python--docx](https://img.shields.io/badge/python--docx-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://python-docx.readthedocs.io/)
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
 
-[![python-dotenv](https://img.shields.io/badge/python--dotenv-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://github.com/theskumar/python-dotenv)
+If PowerShell blocks activation, you can use Command Prompt instead:
 
-[![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)](https://pytest.org/)
+```bat
+.venv\Scripts\activate.bat
+```
 
+**macOS / Linux:**
 
-## 🧩 Core Components
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
 
-### 1. Document Ingestion
+### 3. Install dependencies
 
-**Files:** `document_loader.py`, `text_cleaner.py`, `chunker.py`
+```bash
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
 
-Loads supported documents, normalizes extracted text, and divides the content into smaller chunks for retrieval.
+### 4. Configure environment variables
 
-### 2. Embedding Generation
+Create a `.env` file in the project root, alongside `app.py`. You can copy `.env.example` and fill in the required values.
 
-**File:** `embedding_model.py`
+Example:
 
-Uses the configured Sentence Transformers model to convert text into numerical vector representations.
+```env
+GROQ_API_KEY=your_groq_api_key_here
+GROQ_MODEL=openai/gpt-oss-120b
+EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
+CHUNK_SIZE=1000
+CHUNK_OVERLAP=200
+RETRIEVAL_K=4
+VECTORSTORE_PATH=data/vectorstore
+```
 
-### 3. Vector Store
+Use a Groq model that is currently available to your account and supported by your installed integration. The model above is an example; verify its availability before using it.
 
-**File:** `vector_store.py`
+**Security reminders:**
+- Never commit your real `.env` file or API key to GitHub.
+- Keep `.env` listed in `.gitignore`.
+- If an API key is exposed publicly, revoke it and create a replacement.
+- For Streamlit Community Cloud, configure credentials in the app's **Secrets** settings rather than committing `.env`.
 
-Creates and manages the FAISS vector store used for semantic similarity search.
+### 5. Run the application
 
-### 4. Retrieval
+From the project root, run:
 
-**File:** `retriever.py`
+```bash
+streamlit run app.py
+```
 
-Finds relevant document chunks for a user's question and provides the context used by the RAG pipeline.
+Streamlit will provide a local URL in the terminal, commonly `http://localhost:8501`. Open that address in your browser if it does not open automatically.
 
-### 5. RAG Chain
+### 6. Use the chatbot
 
-**Files:** `rag_chain.py`, `prompts.py`
-
-Combines the question, retrieved context, and prompt before invoking the configured Groq LLM.
-
-### 6. Response Handling
-
-**File:** `response_handler.py`
-
-Validates and normalizes generated responses and extracts available source information.
-
-### 7. Application Interface
-
-**File:** `app.py`
-
-Provides document upload, processing status, interactive chat, response display, and session controls through Streamlit.
+1. Open the app.
+2. Upload a PDF, TXT, or DOCX document.
+3. Wait for document processing and indexing to finish.
+4. Ask a question whose answer is contained in the uploaded document.
+5. Review the response and any source information shown by the app.
 
 ## 🧪 Testing
 
-The project includes automated tests for document ingestion, retrieval, and RAG behavior.
-
-Run the full test suite from the project root:
+Run the test suite from the project root:
 
 ```bash
 python -m pytest -v
@@ -179,23 +225,30 @@ python -m pytest test/test_retrieval.py -v
 python -m pytest test/test_rag.py -v
 ```
 
-**Latest local test result:** 63 tests passed, with 1 warning.
+**Last reported local test result:** 63 tests passed, with 1 warning.
 
-This result reflects the local test run. Results may vary across environments depending on dependency versions and configuration.
+This is a previously reported local result, not a guarantee that every environment or future code revision will produce the same result. Run the tests again after making changes.
+
+## 🔧 Troubleshooting
+
+- **Missing API key:** Check that `.env` exists in the project root and contains `GROQ_API_KEY`. Restart the app after changing environment settings.
+- **Model unavailable or access denied:** Check the current Groq model availability and ensure `GROQ_MODEL` names a model your account can access.
+- **Dependency conflicts:** Run `python -m pip check` in the activated virtual environment.
+- **Import or package errors:** Confirm the correct virtual environment is activated and install dependencies with `pip install -r requirements.txt`.
+- **Document produces no useful answer:** Try a text-based document, ask a specific question, and verify that the document contains the requested information.
+- **Streamlit Cloud differs from local:** Check the deployment logs, Python version, installed dependencies, and app Secrets configuration.
 
 ## 🔒 Security and Limitations
 
-- Store API credentials in environment variables.
+- Store API credentials in environment variables or the hosting platform's secret manager.
 - Keep `.env` out of Git commits.
-- Validate uploaded documents before processing.
+- Validate uploaded files and use appropriate upload-size limits.
 - Do not load untrusted serialized vector-store files.
 - Review retrieved context and generated answers for accuracy.
-- Add authentication, authorization, and appropriate upload limits before supporting multiple users in production.
-- Avoid uploading confidential documents to external services unless permitted by the relevant data policies.
+- Avoid sending confidential documents to external services unless permitted by the applicable data policies.
+- Add authentication, authorization, monitoring, and appropriate resource limits before using the application with multiple users in production.
 
 ## 🚀 Future Improvements
-
-Potential enhancements include:
 
 - Conversational memory
 - Multi-document knowledge bases
@@ -205,17 +258,14 @@ Potential enhancements include:
 - Persistent document indexing
 - Authentication and multi-user support
 - Automated RAG evaluation
-- Performance monitoring
-- Production deployment and observability
+- Performance monitoring and observability
 
 ## 🎯 Potential Use Cases
-
-This architecture can be adapted for:
 
 - Document question answering
 - Internal knowledge assistants
 - Research and educational assistants
-- Customer support knowledge bases
+- Customer-support knowledge bases
 - Company policies and technical documentation
 - Product documentation assistants
 
@@ -223,9 +273,9 @@ These are potential applications of the architecture, not claims that separate p
 
 ## 📌 Project Status
 
-**Status: Core implementation completed; further improvements planned.**
+**Core implementation completed; further improvements planned.**
 
-The application runs locally, and the current test suite has passed. Additional enhancements can be introduced as the project evolves.
+The application runs locally, and the last reported local test run passed 63 tests with 1 warning. Check the latest test and deployment results before relying on them.
 
 ## 👨‍💻 Author
 
